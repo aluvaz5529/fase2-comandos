@@ -27,4 +27,7 @@ echo %logonserver%
 #NoGlobalCatalog --> Este parametro significa que tiene información parcial de los objetos de todos los dominios del bosque,para buscar un objeto es más facil pero el problema es ue la información solo esd parcial,entonces lo pongo en $false
 #ReplicationSourceDC --> Esta opción te pregunta por el dominio que quieres hacer la copia 
 #CriticalReplicationOnly --> Es para que replice solo lo esencial (para ocupar menos y no gastar tanto tiempo) pero en mi caso le digo que no
-#
+#LogPath --> Aquí tendrás que indicar la ruta donde se registraran las entradas de los usuarios
+#SysvolPath -->Aquí indicas la rut donde se guardaran los ficheros de los clientes como los scripts de inicio de sesión
+#NoRebootOnCompletion --> Pemite que al finalizar se reinicie el equipo para aplicar los cambios (con $false le decimos que sí y con $True le decimos que no)
+#Force --> Si lo pones en $True evita preguntas de confirmación
