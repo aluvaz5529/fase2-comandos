@@ -13,3 +13,7 @@ if (!(Get-Module -Name ADDSDeployment))
 }
 #Este modulo añade estos comandos https://docs.microsoft.com/es-es/powershell/module/addsdeployment/?view=windowsserver2022-ps&viewFallbackFrom=win10-ps
 #Una vez añadido todos los modulos y características ya podemos pasar a promocionar como adicional al controlador replica
+
+Install-ADDSDomainController -DomainName "smr.local" –Credential (Get-Credential) –SiteName “Default-First-Site-Name” –InstallDNS:$True –NoGlobalCatalog:$false -CreateDNSDelegation:$false -ReplicationSourceDC "orion.smr.local" –CriticalReplicationOnly:$False –DatabasePath “C:\Windows\NTDS” –LogPath “C:\Windows\NTDS” –SysVolPath “C:\Windows\SysVol” –NoRebootOnCompletion:$False -Force:$true
+#luego para comprobar a que dominio esta conectado nuestro equipo podemos poner este comando, que te dice la variable de entorno en la que estas
+echo %logonserver%
