@@ -24,5 +24,7 @@ echo %logonserver%
 #Credential (Get-Credential) -->  Credential pregunta por el nombre del administrador que administra el sistema (administrador del master) y con poner Get-Credential lo que hace es preguntarnos al momento por el administradore n vez de poner una ruta con el un fichero que ponga las credenciales (obviamente para ser más seguro)
 #SiteName “Default-First-Site-Name” --> Pregunta por la ubicación de la réplica y con Default-First-Site-Name le decimos que lo deje en el lugar por defecto
 #InstallDNS --> El DNS de la replica es para que en caso de que el principal cayera los equipos todavia puedan resolve el nombre, para esto ponemos un True con un $
-#NoGlobalCatalog -->Este parametro significa que tiene información parcial de los objetos de todos los dominios del bosque,para buscar un objeto es más facil pero el problema es ue la información solo esd parcial,entonces lo pongo en $false
+#NoGlobalCatalog --> Este parametro significa que tiene información parcial de los objetos de todos los dominios del bosque,para buscar un objeto es más facil pero el problema es ue la información solo esd parcial,entonces lo pongo en $false
+#ReplicationSourceDC --> Esta opción te pregunta por el dominio que quieres hacer la copia 
+#CriticalReplicationOnly --> Es para que replice solo lo esencial (para ocupar menos y no gastar tanto tiempo) pero en mi caso le digo que no
 #
