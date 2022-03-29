@@ -17,3 +17,12 @@ if (!(Get-Module -Name ADDSDeployment))
 Install-ADDSDomainController -DomainName "smr.local" –Credential (Get-Credential) –SiteName “Default-First-Site-Name” –InstallDNS:$True –NoGlobalCatalog:$false -CreateDNSDelegation:$false -ReplicationSourceDC "orion.smr.local" –CriticalReplicationOnly:$False –DatabasePath “C:\Windows\NTDS” –LogPath “C:\Windows\NTDS” –SysVolPath “C:\Windows\SysVol” –NoRebootOnCompletion:$False -Force:$true
 #luego para comprobar a que dominio esta conectado nuestro equipo podemos poner este comando, que te dice la variable de entorno en la que estas
 echo %logonserver%
+
+#Parametros del último comando 
+#ADDSDomainController --> Comando de powershell (cmdlet) que permite instalar un controlador de dominio tanto principal o adicional según lo que le digas
+#DomainName --> Ponemos el nombre del dominio existente en el que queremos unir al equipo
+#Credential (Get-Credential) -->  Credential pregunta por el nombre del administrador que administra el sistema (administrador del master) y con poner Get-Credential lo que hace es preguntarnos al momento por el administradore n vez de poner una ruta con el un fichero que ponga las credenciales (obviamente para ser más seguro)
+#SiteName “Default-First-Site-Name” --> Pregunta por la ubicación de la réplica y con Default-First-Site-Name le decimos que lo deje en el lugar por defecto
+#InstallDNS --> El DNS de la replica es para que en caso de que el principal cayera los equipos todavia puedan resolve el nombre, para esto ponemos un True con un $
+#NoGlobalCatalog -->Este parametro significa que tiene información parcial de los objetos de todos los dominios del bosque,para buscar un objeto es más facil pero el problema es ue la información solo esd parcial,entonces lo pongo en $false
+#
