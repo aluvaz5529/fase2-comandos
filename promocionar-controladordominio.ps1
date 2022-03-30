@@ -1,4 +1,4 @@
-#script para crear un nuevo busque junto a el dominio raiz
+#script para crear un nuevo bosque junto a el dominio raiz
 #
 # Script de Windows PowerShell para implementación de AD DS
 #
