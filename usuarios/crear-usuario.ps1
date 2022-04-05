@@ -8,3 +8,13 @@ if (!(Get-Module -Name ActiveDirectory)) #accederá al then si no tiene ActiveDi
   Import-Module ActiveDirectory 
 }
 #carga el modulo ActiveDirectory
+#
+$fichero_csv=Read-Host "Introduce el fichero csv de los usuarios:"
+#crea una variable del fichero que le pongas
+#Ahora le importamos con la segunda parte el fichero (import-csv) la variable que contiene el fichero csv previamente selccionado
+$fichero_csv_importado = import-csv -Path $fichero_csv -Delimiter : 			     
+foreach($linea_leida in $fichero_csv_importado)
+#path es la ruta y el delimitar es lo que separa los nombres del csv , es decir seria algo algo
+#juan:sanchez:departamento_informatica:san-gva.es <-- solo es un ejemplo
+#creas una variable que contiene el path (ruta) que va a tener el usuario
+$rutaContenedor =$linea_leida.ContainerPath+","+$dc 
