@@ -16,5 +16,7 @@ $fichero_csv_importado = import-csv -Path $fichero_csv -Delimiter :
 foreach($linea_leida in $fichero_csv_importado)
 #path es la ruta y el delimitar es lo que separa los nombres del csv , es decir seria algo algo
 #juan:sanchez:departamento_informatica:san-gva.es <-- solo es un ejemplo
-#creas una variable que contiene el path (ruta) que va a tener el usuario
+#creas una variable que contiene el path (ruta) que va a tener el usuario OU=Departamento_informatica,dc=san-gva,dc=es
 $rutaContenedor =$linea_leida.ContainerPath+","+$dc 
+#convertimos la contraseña en una segura en mi caso es el dni
+$passAccount=ConvertTo-SecureString $linea_leida.dni -AsPlainText -force
