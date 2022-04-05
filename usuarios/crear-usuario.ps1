@@ -5,13 +5,12 @@ $sufijo=.es
 $dc="dc="+$dominio+",dc="+$sufijo
 if (!(Get-Module -Name ActiveDirectory)) #accederá al then si no tiene ActiveDirectory sería como decirle al ordenador si no lo tienes carga el modulo,si lo tienes no hagas nada
 {
-  Import-Module ActiveDirectory 
+  Import-Module ActiveDirectory #carga el modulo ActiveDirectory
 }
-#carga el modulo ActiveDirectory
-#
-$fichero_csv=Read-Host "Introduce el fichero csv de los usuarios:"
 #crea una variable del fichero que le pongas
-#Ahora le importamos con la segunda parte el fichero (import-csv) la variable que contiene el fichero csv previamente selccionado
+$fichero_csv=Read-Host "Introduce el fichero csv de los usuarios:"
+
+#Ahora le importamos con la segunda parte el fichero (import-csv) la variable que contiene el fichero csv previamente seleccionado
 $fichero_csv_importado = import-csv -Path $fichero_csv -Delimiter : 			     
 foreach($linea_leida in $fichero_csv_importado)
 #path es la ruta y el delimitar es lo que separa los nombres del csv , es decir seria algo algo
