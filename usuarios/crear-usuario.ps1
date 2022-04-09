@@ -52,7 +52,7 @@ New-ADUser `
     		-ChangePasswordAtLogon $true `
 		-PasswordNotRequired $false `
     		-Path $rutaContenedor
-	
-	
-	
+$cnGrpAccount="Cn="+$linea_leida.Group+","+$rutaContenedor
+	Add-ADGroupMember -Identity $cnGrpAccount -Members $nameShort
+}
 	
