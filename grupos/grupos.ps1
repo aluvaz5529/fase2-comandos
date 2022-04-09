@@ -1,5 +1,5 @@
 $dominio="san-gva"
-$sufijo=es
+$sufijo="es"
 $dc="dc="+$dominio+",dc="+$sufijo
 #si no tiene el modulo de active directory entonces lo importará
 if (!(Get-Module -Name ActiveDirectory)) #Accederá al then solo si no existe una entrada llamada ActiveDirectory
