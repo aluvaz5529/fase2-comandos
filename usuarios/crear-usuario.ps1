@@ -19,3 +19,10 @@ foreach($linea_leida in $fichero_csv_importado)
 $rutaContenedor =$linea_leida.ContainerPath+","+$dc 
 #convertimos la contraseña en una segura en mi caso es el dni
 $passAccount=ConvertTo-SecureString $linea_leida.dni -AsPlainText -force
+#Ahora le ponemos nombre a los campos del csv para facilitar la escritura
+	$name=$linea.Name
+	$nameShort=$linea.Name+'.'+$linea_leida.Surname1
+	$Surnames=$linea.Surname
+	$nameLarge=$linea.Name+' '+$linea_leida.Surname1+' '+$linea_leida.Surname2
+	$computerAccount=$linea_leida.Computer
+	$email=$linea_email
