@@ -23,6 +23,7 @@ $passAccount=ConvertTo-SecureString $linea_leida.dni -AsPlainText -force
 	$name=$linea.Name
 	$nameShort=$linea.Name+'.'+$linea_leida.Surname1
 	$Surnames=$linea.Surname
+	$cuenta=$linea.account
 	$nameLarge=$linea.Name+' '+$linea_leida.Surname1+' '+$linea_leida.Surname2
 	$computerAccount=$linea_leida.Computer
 	$email=$linea_email
@@ -36,9 +37,9 @@ $passAccount=ConvertTo-SecureString $linea_leida.dni -AsPlainText -force
   	If($linea_leida.Hability -Match 'false') { $Habilitado=$false}
 
 New-ADUser `
-    		-SamAccountName $nameShort `
+    		-SamAccountName $cuenta `
     		-UserPrincipalName $nameShort `
-    		-Name $nameLarge `
+    		-Name $cuenta `
 		-Surname $Surnames `
     		-DisplayName $nameLarge `
     		-GivenName $name `
