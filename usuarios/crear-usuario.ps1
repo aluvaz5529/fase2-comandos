@@ -26,3 +26,32 @@ $passAccount=ConvertTo-SecureString $linea_leida.dni -AsPlainText -force
 	$nameLarge=$linea.Name+' '+$linea_leida.Surname1+' '+$linea_leida.Surname2
 	$computerAccount=$linea_leida.Computer
 	$email=$linea_email
+	$DNI=&linea.DNI
+	$Delegation=linea.delegation
+	$departament=linea.departament
+	$password=linea.password
+	$days=linea.TurnPassDays
+#
+	[boolean]$enabled=$true
+  	If($linea_leida.Hability -Match 'false') { $Habilitado=$false}
+
+New-ADUser `
+    		-SamAccountName $nameShort `
+    		-UserPrincipalName $nameShort `
+    		-Name $nameLarge `
+		-Surname $Surnames `
+    		-DisplayName $nameLarge `
+    		-GivenName $name `
+    		-LogonWorkstations:$linea_leida.Computer `
+		-Description "Cuenta de $nameLarge" `
+    		-EmailAddress $email `
+		-AccountPassword $passAccount `
+    		-Enabled $enabled `
+		-CannotChangePassword $false `
+    		-ChangePasswordAtLogon $true `
+		-PasswordNotRequired $false `
+    		-Path $rutaContenedor
+	
+	
+	
+	
