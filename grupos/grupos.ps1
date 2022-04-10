@@ -10,6 +10,7 @@ if (!(Get-Module -Name ActiveDirectory)) #Accederá al then solo si no existe un
 $fileUsersCsv=Read-Host "Introduce el fichero csv de los usuarios:"
 $fichero = import-csv -Path $fileUsersCsv -Delimiter :
 #
+NEW-ADGroup -Name "MYGRP" -Description "MY GROUP" -Groupscope Global
 foreach($linea_leida in $fichero)
 {
 	Add-ADGroupMember -Identity $linea_leida.Grupo -Members $linea_leida.Usuario
