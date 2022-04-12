@@ -1,5 +1,5 @@
 Name:Descripcion:Path:1
-departamentos:Unidad Organizativa:dc=hgeneral,dc=san-gva,dc=es:2
-departamentos:Unidad Organizativa:dc=hgeneral,dc=san-gva,dc=es:2
+departamentos:Unidad Organizativa::1
+Equipos:Unidad Organizativa:OU=departamentos:2
 #Si quieres una UO que esta dentro de otra se pone del revés, es decir OU=Informatica,OU=departamentos
 #(Informatica estaría dentro de departamentos)
