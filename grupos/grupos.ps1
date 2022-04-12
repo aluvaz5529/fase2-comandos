@@ -9,7 +9,7 @@ if (!(Get-Module -Name ActiveDirectory)) #Accederá al then solo si no existe un
 $fileUsersCsv=Read-Host "Introduce el fichero csv de los grupos"
 $fichero = import-csv -Path $fileUsersCsv -Delimiter ";"
 #Con este comando creas los grupos
-#foreach es el bucle
+#foreach es el bucle y lo que permite que lea linea a linea , campo por campò
 foreach($linea in $fichero)
 {
 $path_OU=$linea.Path +","+$path
