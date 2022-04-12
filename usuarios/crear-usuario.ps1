@@ -17,7 +17,7 @@ foreach($linea in $fichero_csv_importado)
 #creas una variable que contiene el path (ruta) que va a tener el usuario OU=Departamento_informatica,dc=san-gva,dc=es
 $rutaContenedor =$linea.Path+","+$dc 
 #convertimos la contraseña en una segura en mi caso es el dni
-$passAccount=ConvertTo-SecureString $linea_leida.dni -AsPlainText -force
+$passAccount=ConvertTo-SecureString $linea.dni -AsPlainText -force
 #Ahora le ponemos nombre a los campos del csv para facilitar la escritura
 	$name=$linea.Name
 	$nameShort=$linea.Name+'.'+$linea_leida.Surname1
