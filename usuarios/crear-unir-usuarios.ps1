@@ -39,10 +39,9 @@ New-ADUser -SamAccountName $cuenta -UserPrincipalName $nameShort -Name $cuenta -
     		-ChangePasswordAtLogon $true `
 		-PasswordNotRequired $false `
     		-Path $Path
-		Write-Host $linea.account
-		Write-Host $linea.Department
-	Add-ADGroupMember -Identity $linea.Department -Members $linea.account
+    Write-Host $linea.department
+    Write-Host $linea.account
+Add-ADGroupMember -Identity $linea.Department -Members $linea.account
 }
 
 
-#Este es el que funciona pero hay que mirar lo de los miembros
