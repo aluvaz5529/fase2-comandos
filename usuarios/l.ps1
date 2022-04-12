@@ -41,3 +41,6 @@ New-ADUser -SamAccountName $cuenta -UserPrincipalName $nameShort -Name $cuenta -
     		-Path $Path
 #	Add-ADGroupMember -Identity $Path -Members $nameShort
 }
+
+
+#Este es el que funciona pero hay que mirar lo de los miembros
