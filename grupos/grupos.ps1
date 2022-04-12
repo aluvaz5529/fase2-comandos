@@ -10,7 +10,10 @@ $fileUsersCsv=Read-Host "Introduce el fichero csv de los grupos"
 $fichero = import-csv -Path $fileUsersCsv -Delimiter ";"
 #creas una variable con el nombre de fichero en el que le importas el csv con el delimitador de ; que quiere decir que el fichero esta separado por puntos y comas
 #El path es el que tu le pongas cuando lo arrastras a powershell
-#foreach es el bucle y lo que permite que lea linea a linea , campo por campò
+#foreach es el bucle y lo que permite que lea linea a linea , campo por campo
+#es decir lo que hace foreach con lo que le has puesto dentro es, coge la variable que le dice donde esta el csv y lo referencia con el nombre linea
+#entonces cuando quieras hacer refererncia a algo del csv le pones linea (en este caso por lo que pone en el foreach) seguido de un punto y el nombre
+#que hayas elegido de cada campo
 foreach($linea in $fichero)
 {
 $path_OU=$linea.Path +","+$path
