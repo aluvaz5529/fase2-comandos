@@ -1,5 +1,7 @@
 $dominio="san-gva.es"
 $path= "dc=hgeneral,dc=san-gva,dc=es"
+#esto solo funcionara en el subdominio hegeneral porque al final el la ruta hace referencia a una variable que contiene la uo en la que se tiene que poner el grupo
+#y también contiene a parte de la uo la varibale path que has definido en la segunda linea
 #si no tiene el modulo de active directory entonces lo importará
 if (!(Get-Module -Name ActiveDirectory)) #Accederá al then solo si no existe una entrada llamada ActiveDirectory
 {
