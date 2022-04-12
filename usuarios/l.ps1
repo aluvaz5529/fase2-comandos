@@ -39,7 +39,7 @@ New-ADUser -SamAccountName $cuenta -UserPrincipalName $nameShort -Name $cuenta -
     		-ChangePasswordAtLogon $true `
 		-PasswordNotRequired $false `
     		-Path $Path
-#	Add-ADGroupMember -Identity $Path -Members $nameShort
+	Add-ADGroupMember -Identity $linea.Department -Members $linea.account
 }
 
 
