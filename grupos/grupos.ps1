@@ -20,5 +20,4 @@ foreach($linea in $fichero)
 {
 $path_OU=$linea.Path +","+$path
 NEW-ADGroup -Name $linea.Name -Description $linea.Description -Path $path_OU -GroupScope $linea.Scope
-Add-ADGroupMember -Identity $linea.Department -Members $linea.account
 }
