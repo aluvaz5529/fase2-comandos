@@ -1,4 +1,5 @@
-$dominio=hgeneral.san-gva.es
+$dominio=san-gva.es
+$dc="dc=hgeneral,dc=san-gva,dc=es"
 #Creas una variable con el nombre del dominio Ejemplo: dc=san-gva,dc=es.
 $dc="dc="+$dominio+",dc="+$sufijo
 if (!(Get-Module -Name ActiveDirectory)) #accederá al then si no tiene ActiveDirectory sería como decirle al ordenador si no lo tienes carga el modulo,si lo tienes no hagas nada
@@ -14,7 +15,7 @@ foreach($linea in $fichero_csv_importado)
 #path es la ruta y el delimitar es lo que separa los nombres del csv , es decir seria algo algo
 #juan:sanchez:departamento_informatica:san-gva.es <-- solo es un ejemplo
 #creas una variable que contiene el path (ruta) que va a tener el usuario OU=Departamento_informatica,dc=san-gva,dc=es
-$rutaContenedor =$linea_leida.ContainerPath+","+$dc 
+$rutaContenedor =$linea.Path+","+$dc 
 #convertimos la contraseña en una segura en mi caso es el dni
 $passAccount=ConvertTo-SecureString $linea_leida.dni -AsPlainText -force
 #Ahora le ponemos nombre a los campos del csv para facilitar la escritura
