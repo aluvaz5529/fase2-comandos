@@ -1,5 +1,5 @@
-Name:Description:Group
-Enfermeria:grupo de Enfermería:Global
-Informatica:Grupo del departamento de informatica:Global
-Alergologia:departamento de Alergología:Global
-Comunicacion_Prensa:departamento de Comunicacion y Prensa:Global
+Name;Description;Category;Path;Scope
+Enfermeria;grupo de Enfermería;Security;OU=departamentos;Global
+Informatica;Grupo del departamento de informatica;Security;OU=departamentos;Global
+Alergologia;Departamento de Alergología;Security;OU=departamentos;Global
+Comunicacion_Prensa;Departamento de Comunicacion y Prensa;Security;OU=departamentos;Global
