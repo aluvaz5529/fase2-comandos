@@ -8,7 +8,8 @@ if (!(Get-Module -Name ActiveDirectory)) #Accederá al then solo si no existe un
 #
 $fileUsersCsv=Read-Host "Introduce el fichero csv de los grupos"
 $fichero = import-csv -Path $fileUsersCsv -Delimiter ";"
-#Con este comando creas los grupos
+#creas una variable con el nombre de fichero en el que le importas el csv con el delimitador de ; que quiere decir que el fichero esta separado por puntos y comas
+#El path es el que tu le pongas cuando lo arrastras a powershell
 #foreach es el bucle y lo que permite que lea linea a linea , campo por campò
 foreach($linea in $fichero)
 {
