@@ -21,3 +21,5 @@ foreach($linea in $fichero)
 $path_OU=$linea.Path +","+$path
 NEW-ADGroup -Name $linea.Name -Description $linea.Description -Path $path_OU -GroupScope $linea.Scope
 }
+#Los que terminan en GL son para permisos,es decir tendré que poner permisos a estos ultimos y unir a los globales dentro
+#lo pongo aquí porque en los csv no se pueden poner comentarios
