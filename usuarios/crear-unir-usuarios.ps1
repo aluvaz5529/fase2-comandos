@@ -41,7 +41,7 @@ New-ADUser -SamAccountName $cuenta -UserPrincipalName $nameShort -Name $cuenta -
     		-Path $Path
     Write-Host $linea.department
     Write-Host $linea.account
-Add-ADGroupMember -Identity $linea.Department -Members $linea.account
+    $grupo =$linea.Department+"_GG"
+    Write-Host $grupo
+Add-ADGroupMember -Identity $grupo -Members $linea.account
 }
-
-
