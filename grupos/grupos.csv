@@ -8,3 +8,4 @@ Informatica_GL;Grupo local del departamento de informatica;Security;OU=departame
 Alergologia_GL;Departamento local de Alergología;Security;OU=departamentos;DomainLocal
 Comunicacion_Prensa_GL;Departamento local de Comunicacion y Prensa;Security;OU=departamentos;DomainLocal
 Enfermeria_GL;Departamento local Enfermeria;Security;OU=departamentos;DomainLocal
+comun_x;grupo local común;Security;OU=departamentos;DomainLocal
